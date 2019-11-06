@@ -16,11 +16,24 @@ router.get('/logout', function(req,res,next){
 });
 
 router.get('/contact', function(req, res, next){
-  res.render('contact');
+  res.render('contact', {
+    name: req.query.name,
+    lastname: req.query.lastname,
+  });
 });
 
-router.get('/about'), function(req, res, next){
-  res.render('about');
+router.post('/contact2', function(req, res, next){
+  res.render('contact', {
+    name: req.body.name,
+    lastname: req.body.lastname,
+  });
+});
+
+router.get('/about', function(req, res, next){
+  res.render('about', {
+    name: req.query.name,
+    lastname: req.query.lastname,
+  });
 });
 
 module.exports = router;

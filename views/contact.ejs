@@ -3,3 +3,34 @@
 <h1>This is the next page</h1>
 <p>Testing testing testing</p>
 <p>This is another paragraph hhihihi</p>
+<p>HI! my name is <%= name %> <%= lastname %>.</p>
+
+<form method="get" action="/contact">
+
+<label for="name">Name (4 to 8 characters):</label>
+
+<input type="text" id="name" name="name" required
+              minlength="4" maxlength="8" size="10">
+
+<label for="lastname">LastName (3 to 8 characters):</label>
+
+       <input type="text" id="lastname" name="lastname" required
+              minlength="3" maxlength="8" size="10">
+
+              <button type="submit">Submit</button>
+</form>
+
+<form method="post" action="/contact2">
+
+<label for="name">Name (4 to 8 characters):</label>
+
+<input type="text" id="name" name="name" required
+              minlength="4" maxlength="8" size="10">
+
+<label for="lastname">LastName (3 to 8 characters):</label>
+
+       <input type="text" id="lastname" name="lastname" required
+              minlength="3" maxlength="8" size="10">
+
+              <button type="submit">Submit</button>
+</form>
