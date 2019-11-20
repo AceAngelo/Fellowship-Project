@@ -1,3 +1,42 @@
 <%- contentFor('title') %>Home
 <%- contentFor('body') %>
 <h1>Hello Dynamic World! Hi </h1>
+<form>
+  First name:<br>
+  <input type="text" name="firstname"><br>
+  Last name:<br>
+  <input type="text" name="lastname">
+</form>
+<button id="chris"> Click Me!</button>
+<ul>
+  <%for(let record of records){%>
+    <li><%=record.title%></li>
+  <% } %>
+</ul>
+
+
+<script>
+
+  function displayResult(value) {
+    document.getElementById("chris").innerHTML = value;
+  }
+
+  $("#chris").click(function(e) {
+    e.preventDefault();
+    alert("hi")
+    $.ajax({
+      type: "GET",
+      url: "https://sv443.net/jokeapi/category/programming",
+      data: {},
+      success: function(result) {
+        if (result.info) {
+          displayResult(result.info)
+        }
+    },
+    error: function(result) {
+      alert("that didnt work :(")
+    }
+  });
+});
+
+</script>
