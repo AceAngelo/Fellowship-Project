@@ -13,6 +13,14 @@ router.get('/', function(req, res, next){
   });
 });
 
+router.get('/posts', function(req, res, next){
+  models.Post.findByPk(req.query.id).then(function(record){
+    res.render('post', {
+      record: record
+    });
+  });
+});
+
 router.get('/logout', function(req,res,next){
   req.logout();
   req.flash('info', 'You have been logged out.');

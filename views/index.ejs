@@ -10,7 +10,7 @@
 <button id="chris"> Click Me!</button>
 <ul>
   <%for(let record of records){%>
-    <li><%=record.title%></li>
+    <li><a href="/posts?id=<%= record.id %>"><%record.from %><%=record.title%><%=record.full_text%><%=record.media_url%></a></li>
   <% } %>
 </ul>
 
