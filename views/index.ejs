@@ -12,10 +12,14 @@
   <%for(let record of records){%>
     <li><a href="/posts?id=<%= record.id %>"><%record.from %><%=record.title%><%=record.full_text%><%=record.media_url%></a></li>
   <% } %>
+  <p>
+
 </ul>
 
 
 <script>
+
+
 
   function displayResult(value) {
     document.getElementById("chris").innerHTML = value;

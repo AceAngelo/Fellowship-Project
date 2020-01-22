@@ -7,11 +7,29 @@ const models = require('../models');
 
 router.get('/', function(req, res, next){
   models.Post.findAll().then(function(records){
-    res.render('index', {
+    res.render('index',{
       records: records
     });
   });
 });
+
+
+router.get('/new-post', function(req, res, next){
+  res.render('newpost.ejs', {
+
+  });
+});
+
+router.post('/new-post', function(req, res, next) {
+  models.Post.create({
+    from: req.body.from,
+    title: req.body.title,
+    full_text: req.body.full_text
+  }).then(function(record) {
+      res.redirect(`/posts?id=${record.id}`);
+  });
+});
+
 
 router.get('/posts', function(req, res, next){
   models.Post.findByPk(req.query.id).then(function(record){

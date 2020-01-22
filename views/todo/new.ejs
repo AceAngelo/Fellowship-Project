@@ -1,0 +1,11 @@
+<%- contentFor('title') %>
+<%- contentFor('body') %>
+<h1> NEW TODOs Page</h1>
+
+<form method="post" action="/todo">
+  <label for="title">Title:</label><br/>
+  <input type="text" id="title" name="title" required><br/>
+  <label for="body">Body:</label><br/>
+  <textarea name="name" rows="8" cols="80"></textarea><br/>
+  <button type="submit">Submit</button>
+</form>
